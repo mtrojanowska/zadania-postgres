@@ -1,0 +1,31 @@
+1.select name from products;
+2.select name, price from products;
+3.select name from products where price<=200;
+4.select name from products where price between 60 and 120;
+5.update products set price=price * 100;
+  select name, price from products;
+6.select AVG(price) from products;
+7.select AVG(price) from products where manufacturer_id=2;
+8.select count(*) from products where price>=180;
+9.select name, price form products where price>=180 order by price desc, name asc;
+10. select manufacturers.id, manufacturers.name, products.name, price from manufacturers join products on manufacturers.id=products.manufacturer_id; 
+11.select manufacturers.name, products.name, price from manufacturers join products on manufacturers.id=manufacturer_id;
+12.select manufacturer_id, avg(price) from products group by manufacturer_id;
+13. select manufacturers.name, avg(price) from manufacturers join products on manufacturers.id=manufacturer_id group by manufacturers.name;
+
+14.  select manufacturers.name, avg(price) from manufacturers right join products on manufacturers.id=manufacturer_id group by manufacturers.name having avg(price)>=150;
+15. select name, price from products order by price asc limit 1;
+
+16. ??
+
+17. select manufacturers.name from manufacturers left outer join products on manufacturers.id=products.manufacturer_id where products.name is null; 
+18. insert into products (name, price, manufacturer_id) VALUES ('Loudspeakers', 70, 2);
+19. update products set name ='Laser printer' where id =8; 
+20. update products set price=price-(price/100*10);
+21. update products set price=price-(price/100*10) where price>=120;
+
+
+
+
+
+
