@@ -1,12 +1,13 @@
-
 class Library
   attr_accessor :books, :book
   def initialize(books)
     @books = books
+    @book = book
   end
   def add(book)
     @books<<book
   end
+
   def take(book)
     index = books.index(book)
   return books.delete_at(index) if index
@@ -32,12 +33,14 @@ class List
 end
 
 class Reader
-  attr_accessor :reader
+  attr_accessor :reader, :books, :book, :readers_list
   def initialize(reader)
     @reader = reader
     @readers_list = []
+    @books = books
+    @book = book
   end
-  def borrow(books)
+  def borrow(book)
     book = books.take(book)
     readers_list << book
   end
@@ -72,4 +75,4 @@ list=List.new(readers)
 reader=Reader.new("Z.Appelbaum")
 list.add_to_list(reader)
 
-p list
+p reader.borrow('Za górami, za lasami')
